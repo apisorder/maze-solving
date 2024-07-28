@@ -4,6 +4,11 @@
 // Problem:        Java Tutorial 1
 
 //  demonstrates basic OOP syntax
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 class BankAccount
 {
     //  account balance
@@ -44,6 +49,42 @@ public class JavaLessonOne
 
     //  static => only a class can call this method
     //  public => accessible by all classes
+
+    //  prompts user to enter a string and returns the string
+    public static String getString() throws IOException
+    {
+    InputStreamReader isr = new InputStreamReader(System.in);
+    BufferedReader br = new BufferedReader(isr);
+    String s = br.readLine();
+    return s;
+    }
+
+    //  prompts user to enter a string and returns the first character 
+    public static char getChar() throws IOException
+    {
+        String s = getString();
+        //  prevents extraneous characters being left in the input buffer, because
+        //  such characters can cause problems with subsequent input
+        return s.charAt(0);
+    }
+
+    //  prompts user to enter a string containing a number
+    public static int getInt() throws IOException
+    {
+        //  to read numbers, we make a String object and then convert it to the type we want using a conversion method
+        String s = getString();
+        return Integer.parseInt(s);
+    }
+
+    //  prompts the user to enter a string containing a double
+    public static double getDouble() throws IOException
+    {
+        String s = getString();
+        //  converting String object to a Double object using the wrappper class Double
+        Double aDub = Double.valueOf(s);
+        return aDub.doubleValue();
+    }
+
     public static void main(String[] args)
     {
         System.out.println("String literal = Hello World");
@@ -117,6 +158,7 @@ public class JavaLessonOne
 
         //  make deposit
         ba1.deposit(74.35);
+
         //  make withdrawl
         ba1.withdraw(20.00);
 
@@ -132,6 +174,37 @@ public class JavaLessonOne
         if (ba2.equals(ba1))
         {
             System.out.println("They are equal: meaning they contain the same data!");
+        }
+
+        String userInputString = "";
+        char userInputChar = 'a';
+        int userInputInt = -1;
+        double userInputDouble = 0.0;
+        try
+        {
+            System.out.println("Please enter any string : ");
+            userInputString = getString();
+            System.out.println("The string you entered : " + userInputString);
+
+            System.out.println("Now please another string from which the first character will be retrieved: ");
+            userInputChar = getChar();
+            System.out.println("The character you entered : " + userInputChar);
+
+            System.out.println("Now, please enter another string containing an integer (numbers only) : ");
+            userInputInt = getInt();
+            System.out.println("The integer you entered : " + userInputInt);
+
+            System.out.println("Finally, please enter a string containing a floating number (numbers only, except the decimal point) : ");
+            userInputDouble = getDouble();
+            System.out.println("The floating number you entered : " + userInputDouble);
+        }
+        catch (IOException e)
+        {
+            System.out.println("An IO exception has taken place.  Program will now exit.");
+        }        
+        catch (Exception e)
+        {
+            System.out.println("An unexpected exception has taken place.  Program will now exit.");
         }
     }   //  end main()
 }   //  end class BankApp
