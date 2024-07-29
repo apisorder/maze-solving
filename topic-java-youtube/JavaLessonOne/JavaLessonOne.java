@@ -53,10 +53,12 @@ public class JavaLessonOne
     //  prompts user to enter a string and returns the string
     public static String getString() throws IOException
     {
-    InputStreamReader isr = new InputStreamReader(System.in);
-    BufferedReader br = new BufferedReader(isr);
-    String s = br.readLine();
-    return s;
+        // InputStreamReader isr = new InputStreamReader(System.in);
+        // BufferedReader br = new BufferedReader(isr);
+        // String s = br.readLine();
+
+        String s = new BufferedReader(new InputStreamReader(System.in)).readLine();
+        return s;
     }
 
     //  prompts user to enter a string and returns the first character 
