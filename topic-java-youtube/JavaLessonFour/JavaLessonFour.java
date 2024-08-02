@@ -8,7 +8,7 @@ import java.util.Scanner;
 //  demonstrates ordered array class
 class  OrdArray
 {
-    //  reference to arrfay a
+    //  reference to array a
     private long[] a;
     //  number of data items
     private int nElems;
@@ -99,8 +99,11 @@ class  OrdArray
         else
         {
             //  move bigger ones down
-            for (int k = j; k < nElems; k++)
+            for (int k = j; k < nElems-1; k++)
             {
+                System.out.println("k = " + k);
+                System.out.println("a[k] = " + a[ k ]);
+                System.out.println("a[k+1] = " + a[ k+1 ]);
                 a[k] = a[k+1];
             }
             //  decrement size

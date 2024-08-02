@@ -129,6 +129,10 @@ public class JavaLessonTwo
          //  move higher ones down
         for (int k = j; k < nElems-1; k++)
         {
+            System.out.println("k = " + k);
+            System.out.println("arr[k] = " + arr[k]);
+            System.out.println("arr[k+1] = " + arr[k+1]);
+
             arr[k] = arr[k+1];
         }
         //  decrement size

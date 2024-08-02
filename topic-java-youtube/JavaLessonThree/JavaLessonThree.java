@@ -91,6 +91,8 @@ class HighArray
     //  it then decrements nElems
     public boolean delete(long value)
     {
+        // System.out.println("HiArray Delete()");
+
         int j;
         //  look for it
         for (j = 0; j < nElems; j++)
@@ -111,6 +113,10 @@ class HighArray
             //  move higher ones down
             for (int k = j; k < nElems-1; k++)
             {
+                // System.out.println("k = " + k);
+                // System.out.println("arr[k] = " + a[k]);
+                // System.out.println("arr[k+1] = " + a[k+1]);
+    
                 a[k] = a[k+1];
             }
             //  decrement size
@@ -234,8 +240,8 @@ public class JavaLessonThree
             System.out.println("Found " + searchKey);
         }
 
-        //  delete value 55
-        //  look for it
+        // System.out.println("LowArray.delete()");
+
         for (j = 0; j < nElems; j++)
         {
             if (arr.getElem(j) == 55)
@@ -247,6 +253,10 @@ public class JavaLessonThree
         //  higher ones down
         for (int k = j; k < nElems-1; k++)
         {
+            // System.out.println("k = " + k);
+            // System.out.println("arr.getElem(k) = " + arr.getElem(k));
+            // System.out.println("arr.getElem(k+1) = " + arr.getElem(k+1));
+
             arr.setElem(k, arr.getElem(k+1));
         }
         //  decrement size
