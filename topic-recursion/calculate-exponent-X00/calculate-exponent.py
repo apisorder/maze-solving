@@ -1,18 +1,23 @@
 
 # Programmer:       Cheng, Jeff
 # Last Modified:    07-04-24 09:51PM
-# Problem:          Exponent Calculation Iteration and Recursion
+# Problem:          Calculating the Exponent
 
 def exponentByIteration(a, n):
     if n <= 0:
         return 1
     
     result = 1
+    #   note there is no need to use n+1, since we start at 0
+    # for i in range(1, n+1):
+    #     result *= a
+
     for i in range(n):
         result *= a
 
     return result
 
+print(exponentByIteration(3, 2))
 print(exponentByIteration(3, 6))
 print(exponentByIteration(10, 3))
 print(exponentByIteration(17, 10))
@@ -29,12 +34,15 @@ def exponentByRecursion(a, n):
         result = exponentByRecursion(a, n//2)
         return result * result * a
 
+print(exponentByRecursion(3, 2))
 print(exponentByRecursion(3, 6))
 print(exponentByRecursion(10, 3))
 print(exponentByRecursion(17, 10))
 
 def exponentByPowerRule(a, n):
     if n <= 0:
+        return 1
+    if n == 1:
         return a
 
     opStack = []
@@ -57,6 +65,7 @@ def exponentByPowerRule(a, n):
         
     return result
 
+print(exponentByPowerRule(3, 2))
 print(exponentByPowerRule(3, 6))
 print(exponentByPowerRule(10, 3))
 print(exponentByPowerRule(17, 10))

@@ -1,20 +1,20 @@
 
 # Programmer:       Cheng, Jeff
-# Last Modified:    07-12-24 09:50PM
-# Problem:          Rev Head Tail Recursion
+# Last Modified:    07-11-24 09:56PM
+# Problem:          Concat Recursion
 
-def revHeadTail(strings):
+def concat(strings):
     if len(strings) == 0:
         return ""
     else:
         #   head = strings[0]
         #   tail = strings[1:]
-        return revHeadTail(strings[1:]) + strings[0]
+        return strings[0] + concat(strings[1:])
 
 strings = []
 while True:
     try:
-        addThisString = input("Enter the strings to reverse, one at a time [enter nothing to quit]: ")
+        addThisString = input("Enter strings to concat, one at a time [enter nothing to quit]: ")
         if addThisString == '':
             break
         strings.append(addThisString)
@@ -23,5 +23,4 @@ while True:
     except:
         print("An unknown error has taken place.")
 
-print("Reversed strings = " + revHeadTail(strings))
-print("Reversed string where string = Hello => " +revHeadTail("Hello"))
+print("Concating strings = " + concat(strings))

@@ -21,12 +21,13 @@ i = 1
 while i <= 20:
     #   skipping even numbers
     if i%2 == 0:
+        #   note the i += 1 here
         i += 1
         continue
     if i == 15:
         break
     print("Odd : ", i)
-    #   remember to increment
+    #   note the separate i += 1 here
     i += 1
 
 #   the hardest problem so far
@@ -35,7 +36,7 @@ while i <= 20:
 #   draw the pine tree
 
 #   we count from height - 1 to 0
-height = int(input( "How tall is the tree : " ))-1
+
 #   how tall is the tree
 #           #       -> 4 spaces
 #          ###      -> 3
@@ -61,34 +62,22 @@ height = int(input( "How tall is the tree : " ))-1
 #   5.  Print spaces and then hashes for each row
 #   6.  Print stump spaces  and then 1 hash
 
-bark = height-1
-number_of_hashes = 1
-
-pattern = ""
-spaces = 0
-hashes = 0
-while height >= 0:
-    while spaces <= (height-1):
-        pattern += ' '
-        spaces += 1
-    while hashes < number_of_hashes:
-        pattern += '#'
-        hashes += 1
-    print(pattern)
-    pattern = ""
-    spaces = 0
-    hashes = 0
-    number_of_hashes += 2
-    height -= 1
-
-number_of_hashes = 1
-while spaces <= bark:
-    pattern += ' '
-    spaces += 1
-while hashes < number_of_hashes:
-    pattern += '#'
-    hashes += 1
-print(pattern)
+height = int(input("height of the tree : "))
+leave_spaces = height - 1
+trunk_spaces = height-1
+hashes = 1
+for i in range(height):
+	for j in range(leave_spaces):
+		print(" ", end="")
+	for j in range(hashes):
+		print("#", end="")
+	print()
+	hashes += 2
+	leave_spaces -= 1
+	
+for i in range(trunk_spaces):
+	print(" ", end ="")
+print("#")
 
 #   official solution
 tree_height = input("How tall is the tree : ")

@@ -42,10 +42,12 @@ while True:
         #       break
         if guess <= 10 and guess >= 1 and guess == secret_number:
                 break
+        elif guess > 10:
+            print("Guess too big : > 10")
+        elif guess < 1:
+            print("Guess too small : < 1")
     except ValueError:
         print("You didn't enter a number : ")
-    except guess > 10 or guess < 1:
-        print("You did not enter a number between 1 and 10 : ")
     except:
         print("Your guess is incorrect : ")
 

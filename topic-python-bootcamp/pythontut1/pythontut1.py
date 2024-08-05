@@ -6,7 +6,7 @@
 import sys
 
 my_age = 43
-my_name = "Turritopsis Dohrnii"
+my_name = "maze solver"
 
 print("Hello", my_age)
 
@@ -38,14 +38,25 @@ print(f1, "f1 +", f2, "f2 = ", f3)
 
 can_vote = True
 
-print("Xast type(int(5.4)) = ", type(int(5.4)))
-print("Xast2 type(str(5.4)) = ", type(str(5.4)))
-#   convert a UniCode character to a string; there are no character types in Python
-print("Xast3 type(chr(97)) = ", type(chr(97)))
-#   convert a character to a UniCode character; there are no character types in Python
-print("Xast4 type(ord('a')) = ", type(ord('a')))
+print("Cast type(int(5.4)) = ", type(int(5.4)))
 
-print("Xast5 type(float(2)) = ", type(float(2)))
+print("Cast2 type(str(5.4)) = ", type(str(5.4)))
+#   convert a UniCode character to a string; there are no character types in Python
+
+print("chr(number) => correspondng character")
+print("chr(97) = ", chr(97))
+print("Cast2 type(str(5.4)) = ", type(str(5.4)))
+
+print("Cast3 type(chr(97)) = ", type(chr(97)))
+
+#   convert a character to a UniCode character; there are no character types in Python
+print("ord(character) => corresponding number")
+print("ord('a') =  ", ord('a'))
+print("Cast3 type(chr(97)) = ", type(chr(97)))
+
+print("Cast4 type(ord('a')) = ", type(ord('a')))
+
+print("Cast5 type(float(2)) = ", type(float(2)))
 
 num_1 = "1"
 num_2 = "2"

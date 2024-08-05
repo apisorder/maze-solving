@@ -27,7 +27,7 @@ for i in range(21):
 
 your_float = input("Enter a float : ")
 your_float = float(your_float)
-print("Rounded to  2 decimals {:.2f}".format(your_float))
+print("Rounded to  2 decimals using:.2f {:.2f}".format(your_float))
 
 #   your program will :
 #   1. Have the user enter their investment amount
@@ -43,3 +43,12 @@ for year in range(1, 11):
     cumulated_amount = cumulated_amount + cumulated_amount*the_interest_rate
     print(cumulated_amount)
 print("In 10 years, you will have " + str(cumulated_amount))
+
+# investment = float(input("investment amount : "))
+# interest_rate = float(input("interest_rate : "))*0.01
+# years_to_invest = int(input("how many years : "))
+
+# end_amount = investment
+# for i in range(years_to_invest):
+# 	end_amount = end_amount * (1+interest_rate) 
+# 	print("end amount at the end of year " + str(i) + " = " + str(end_amount))

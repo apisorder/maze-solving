@@ -17,6 +17,7 @@ TOWERS = {
 
 def printDisk( diskNum ):
     #   print a single disk of width diskNum
+    #   note it's (TOTAL_DISKS - diskNum)
     emptySpace = ' ' * (TOTAL_DISKS - diskNum)
 
     if diskNum == 0:
@@ -25,12 +26,15 @@ def printDisk( diskNum ):
     else:
         #   draw the disk
         diskSpace = '@' * diskNum
+        #   note how str() is needed
         diskNumLabel = str(diskNum).rjust(2, '_')
         sys.stdout.write( emptySpace + diskSpace + diskNumLabel + diskSpace + emptySpace )
 
 def printTowers():
     #   print the towers
+    #   horizontal
     for level in range(TOTAL_DISKS, -1, -1):
+        #   verticalde
         for tower in (TOWERS['A'], TOWERS['B'], TOWERS['C']):
             if level >= len(tower):
                 printDisk(0)

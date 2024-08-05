@@ -14,7 +14,8 @@ try:
     #   the main program loop
     while True:
         print( ' ' * indent, end='' )
-        print( '********' )
+        print('*' * indent)
+        # print( '********' )
         #   pause for 1/10 of a second
         time.sleep(0.1)
 

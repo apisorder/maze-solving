@@ -21,7 +21,6 @@ while True:
         playerMove = input()
 
         if playerMove == 'q':
-            #   quit the program
             sys.exit()
         if playerMove == 'r' or playerMove == 'p' or playerMove == 's':
             #   break out of the player input loop
