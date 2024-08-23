@@ -5,36 +5,32 @@
 
 import time, sys
 
-#   how many spaces to indent
+#   number of spaces to indent
 indent = 0
-#   whether the indentation is increasing or not
+
+#   direction of indentation
 indentIncreasing = True
 
+#   the main program loop
 try:
-    #   the main program loop
+
     while True:
-        print( ' ' * indent, end='' )
+        print(' ' * indent, end="")
         print('*' * indent)
-        # print( '********' )
-        #   pause for 1/10 of a second
+
+        #   pause for 0.1 sec
         time.sleep(0.1)
 
-        #   increase the number of spaces
         if indentIncreasing:
             indent += 1
 
-            #   change direction
-            if indent == 20:
+            if indent == 65:
                 indentIncreasing = False
 
-        #   decrease the number of spaces
         else:
             indent -= 1
-            
-            #   change direction
+
             if indent == 0:
                 indentIncreasing = True
-
 except KeyboardInterrupt:
     sys.exit()
-            
