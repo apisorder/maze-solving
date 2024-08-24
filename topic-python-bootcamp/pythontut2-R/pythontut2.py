@@ -5,13 +5,10 @@
 
 import math
 
-name = input("What is your name : ")
-print("Hello", name)
-num_1, num_2 = input("Enter two numbers : ").split()
+num_1, num_2 = input("Enter two numbers (which will be multi-assigned using split()): ").split()
 num_1 = int(num_1)
 num_2 = int(num_2)
-print("num_1 = ", num_1, ", and name_2 = ", num_2)
-print("{} + {} = {} ".format(num_1, num_2, num_1 + num_2))
+print("num_1 = ", num_1, ", and name_2 = ", num_2, "; their sum = ", num_1 + num_2)
 
 #   Challenge
 #   Ask the user to input the number of miles

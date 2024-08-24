@@ -5,11 +5,6 @@
 
 import sys
 
-my_age = 43
-my_name = "maze solver"
-
-print("Hello", my_age)
-
 #   This is a one-line comment
 '''
 This is a multi-line comment
@@ -28,36 +23,20 @@ This is a multi-line comment
 str_1 = "\"This is a quote\""
 print(str_1)
 
-print("sys.maxsize", sys.maxsize)
+print("maximum size for integer = sys.maxsize : ", sys.maxsize)
+print("maximum size for floating pointing numbers = sys.float_info.max : ", sys.float_info.max)
 print("sys.float_info.max", sys.float_info.max)
 
 f1 = 1.1111111111111111
 f2 = 1.1111111111111111
-f3 = f1 + f2
-print(f1, "f1 +", f2, "f2 = ", f3)
+print("Floating point error : where f1 = ", f1, "and f2 = ", f2, " f1 + f2 = ", f1 + f2)
 
 can_vote = True
 
-print("Cast type(int(5.4)) = ", type(int(5.4)))
-
-print("Cast2 type(str(5.4)) = ", type(str(5.4)))
 #   convert a UniCode character to a string; there are no character types in Python
-
-print("chr(number) => correspondng character")
-print("chr(97) = ", chr(97))
-print("Cast2 type(str(5.4)) = ", type(str(5.4)))
-
-print("Cast3 type(chr(97)) = ", type(chr(97)))
+print("chr(number) => correspondng character : chr(97) = ", chr(97), )
+print("i.e. type(chr(97)) = ", type(chr(97)))
 
 #   convert a character to a UniCode character; there are no character types in Python
-print("ord(character) => corresponding number")
-print("ord('a') =  ", ord('a'))
-print("Cast3 type(chr(97)) = ", type(chr(97)))
-
-print("Cast4 type(ord('a')) = ", type(ord('a')))
-
-print("Cast5 type(float(2)) = ", type(float(2)))
-
-num_1 = "1"
-num_2 = "2"
-print("\"1\" + \"2\" = ", (int(num_1)+int(num_2)))
+print("ord(character) => corresponding number : ord('a') =  ", ord('a')) 
+print("i.e. type(ord('a')) = ", type(ord('a')))
