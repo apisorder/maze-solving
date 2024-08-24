@@ -1,9 +1,7 @@
 
-// Programmer:     Cheng, Jeff
-// Last Modified:  05-31-2024 08:50AM
-// Problem:        Java Tutorial 1
-
-//  demonstrates basic OOP syntax
+//  Programmer:     Cheng, Jeff
+//  Last Modified:  05-31-2024 08:50AM
+//  Problem:        Java Tutorial 1
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -43,25 +41,20 @@ class BankAccount
 //  class BankApp
 public class JavaLessonOne
 {
-    static String randomString = "String to print";
+    static String randomString = "class String variable";
+   
     //  final == const
     static final double PINUM = 3.141529;
 
-    //  static => only a class can call this method
-    //  public => accessible by all classes
-
-    //  prompts user to enter a string and returns the string
+    //  get string from user
     public static String getString() throws IOException
     {
-        // InputStreamReader isr = new InputStreamReader(System.in);
-        // BufferedReader br = new BufferedReader(isr);
-        // String s = br.readLine();
-
+        //  reads input stream, which in turn is read by buffer reader
         String s = new BufferedReader(new InputStreamReader(System.in)).readLine();
         return s;
     }
 
-    //  prompts user to enter a string and returns the first character 
+    //  get string from user; return the first character only 
     public static char getChar() throws IOException
     {
         String s = getString();
@@ -69,22 +62,21 @@ public class JavaLessonOne
         //  such characters can cause problems with subsequent input
         return s.charAt(0);
     }
-
-    //  prompts user to enter a string containing a number
+    
+    //  get string from user; return a number if the string only contains an integer
     public static int getInt() throws IOException
     {
-        //  to read numbers, we make a String object and then convert it to the type we want using a conversion method
         String s = getString();
         return Integer.parseInt(s);
     }
 
-    //  prompts the user to enter a string containing a double
+    //  get string from user; return a double if the string only contains a number
     public static double getDouble() throws IOException
     {
         String s = getString();
         //  converting String object to a Double object using the wrappper class Double
-        Double aDub = Double.valueOf(s);
-        return aDub.doubleValue();
+        Double wrapper = Double.valueOf(s);
+        return wrapper.doubleValue();
     }
 
     public static void main(String[] args)
@@ -93,10 +85,12 @@ public class JavaLessonOne
         System.out.println("static String randomString = " + randomString);
         System.out.println("static final double PINUM = " + PINUM);
 
+        //  unlike Python, Java doesn't care about spacing
         int integerOne = 21, integerTwo 
         = 
         integerOne 
         + 1; 
+
         System.out.println("int integerTwo = " + integerTwo);
         byte bigByte = 127;
         short bigShort = 32767;
@@ -110,23 +104,19 @@ public class JavaLessonOne
         System.out.println("int bigInt = " + bigInt);
         System.out.println("long bigLong (terminating L required) = " + bigLong);
         System.out.println("float bigFloat = " + bigFloat);
-        System.out.println("double bigDouble (terminating D optinal)= " + bigDouble);
+        System.out.println("double bigDouble (terminating D optinal) = " + bigDouble);
 
-        System.out.println("Float.MAX_VALUE = " + Float.MAX_VALUE);
-        System.out.println("Double.MAX_VALUE = " + Double.MAX_VALUE);
+        System.out.println("Maximum value of integer => Integer.MAX_VALUE = " + Integer.MAX_VALUE);
+        System.out.println("Maximum value of float => Float.MAX_VALUE = " + Float.MAX_VALUE);
+        System.out.println("Maximum value of double => Double.MAX_VALUE = " + Double.MAX_VALUE);
 
         boolean trueOrFalse = true;
+
         char randomChar = 65;
         char anotherChar = 'A';
 
-        System.out.println("boolean trueOrFalse = " + trueOrFalse);
-        System.out.println("char = " + randomChar);
-        System.out.println("anotherChar = " + anotherChar);
-
-        String randomString2 = "I'm a random string";
-        String anotherString = "Stuff";
-        String andAnotherString = randomString2 + ' ' + anotherString;
-        System.out.println("String andAnotherString = " + andAnotherString);
+        System.out.println("randomChar (65) = " + randomChar);
+        System.out.println("anotherChar ('A') = " + anotherChar);
         
         String byteString = Byte.toString(bigByte);
         String shortString = Short.toString(bigShort);
@@ -149,33 +139,30 @@ public class JavaLessonOne
         System.out.println("int doubleToInt = (int) aDoubleValue = " + doubleToInt);
         
         int stringToInt = Integer.parseInt(intString);
-        System.out.println("int stringToInt = Integer.parseInt(String intString = Integer.toString(bigInt)) = " + stringToInt);
+        System.out.println(
+            "int stringToInt = Integer.parseInt(String intString = Integer.toString(bigInt)) = " 
+        + stringToInt);
 
-        //  create acct
         BankAccount ba1 = new BankAccount(100.00);
-
         System.out.print("Before transactions, ");
-        //  display balance
+
         ba1.display();
 
-        //  make deposit
         ba1.deposit(74.35);
-
-        //  make withdrawl
         ba1.withdraw(20.00);
 
         System.out.print("After transactions, ");
-        //  display balance
+
         ba1.display();
 
         BankAccount ba2 = ba1;
         if (ba1 == ba2)
         {
-            System.out.println("Java references: they are identical!");
+            System.out.println("Java references: they are identical (the same thing)!");
         }
         if (ba2.equals(ba1))
         {
-            System.out.println("They are equal: meaning they contain the same data!");
+            System.out.println("They are equal: meaning they contain the same data (not necessarily the same thing)!");
         }
 
         String userInputString = "";
