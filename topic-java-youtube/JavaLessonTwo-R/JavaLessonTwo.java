@@ -5,32 +5,27 @@
 
 import java.util.Scanner;
 
-//  demonstrates Java arrays
-//  name of the class == name of the file
 public class JavaLessonTwo
 {
-    //  any time you want to create a scanner object, you must use the keyword new and scanner, always
-    //  and then the input stream you want the scanner object to look at
-    //  System.in == user's keyboard
     static Scanner userInput = new Scanner(System.in);
+
     public static void main(String[] args)
     {
-        System.out.print("Your favorite number : ");
+        System.out.print("Please enter your favorite integer : ");
 
         if (userInput.hasNextInt())
         {
             //  string == nextLine()
             int numberEntered = userInput.nextInt();
-            System.out.println("int numberEntered = " + numberEntered);
+            System.out.println("The integer you entered = " + numberEntered);
             
-            //  alternatively, int numberEntered2 *= numberEntered;
             int numberEntered2 = numberEntered *2;
             System.out.println(numberEntered + " + " + numberEntered + " = " + Math.abs(numberEntered2));
             System.out.println("number entered vs number entered*2 (which is bigger) : " + Math.max(numberEntered2, numberEntered));
         }
         else
         {
-            System.out.println("Enter an integer next time");
+            System.out.println("Please enter an integer next time!");
             //  Math.ceil returns a float automatically
 
             double numberEntered = 12.13;
@@ -41,7 +36,7 @@ public class JavaLessonTwo
             }
         
             int numCeil = (int) Math.ceil(numberEntered);
-            System.out.println("numbered entered (forced) = " + numCeil);
+            System.out.println("The floating point number you entered (rouned to an integer) = " + numCeil);
         }
 
         System.out.println("Enter a number for the upperbound to generate a random number : ");
@@ -51,11 +46,8 @@ public class JavaLessonTwo
         }
         else
         {
-            System.out.println("Some random number between (0 and 10) : " + Math.random()*11);
+            System.out.println("Invalid input detected.  The upperbound will now default to 10 : " + Math.random()*11);
         }
-        /*
-         *  multi-line comment
-         */
 
          // reference to array
          // alternative syntax: long arr[], but placing the [] after the long makes it clear that the [] is part of the type. 
@@ -138,7 +130,7 @@ public class JavaLessonTwo
         //  decrement size
         nElems -= 1;
 
-        //  display items
+        //  display items again
         for (j = 0; j < nElems; j++)
         {
             System.out.print( arr[j] + " ");
