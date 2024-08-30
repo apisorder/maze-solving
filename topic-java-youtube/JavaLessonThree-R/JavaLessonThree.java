@@ -146,7 +146,7 @@ public class JavaLessonThree
     public static void main(String[] args)
     {
         int defaultValue = (int) (Math.random() * 50);
-        System.out.println("Default value = : " + defaultValue);
+        System.out.println("Default value * (int) (Math.random()* someNumber) = : " + defaultValue);
 
         //  reference
         LowArray arr;
