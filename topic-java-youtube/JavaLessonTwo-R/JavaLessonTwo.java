@@ -104,7 +104,7 @@ public class JavaLessonTwo
         else
         {
             //  no
-            System.out.println("Found " + searchKey);
+            System.out.println("Found " + searchKey + " at index " + j);
         }
          
          // delete item with key 55

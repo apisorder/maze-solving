@@ -5,7 +5,7 @@
 
 import java.util.Scanner;
 
-//  demonstrates ordered array class
+//  ordered array class
 class  OrdArray
 {
     //  reference to array a
@@ -77,7 +77,7 @@ class  OrdArray
                 break;
             }
         }
-        //  move bigger ones up
+        //  shif elements up
         for (int k = nElems; k > j; k--)
         {
             a[k] = a[k-1];
@@ -101,9 +101,9 @@ class  OrdArray
             //  move bigger ones down
             for (int k = j; k < nElems-1; k++)
             {
-                System.out.println("k = " + k);
-                System.out.println("a[k] = " + a[ k ]);
-                System.out.println("a[k+1] = " + a[ k+1 ]);
+                // System.out.println("k = " + k);
+                // System.out.println("a[k] = " + a[ k ]);
+                // System.out.println("a[k+1] = " + a[ k+1 ]);
                 a[k] = a[k+1];
             }
             //  decrement size
@@ -130,78 +130,6 @@ public class JavaLessonFour
     static Scanner userInput = new Scanner(System.in); 
     public static void main(String[] args)
     {
-        int i = 1;
-
-        System.out.println("Printing all 20 numbers");
-        while ( i <= 20 )
-        {
-            System.out.println(i);
-            i++;
-        }
-
-        //  reset i to 1
-        i = 1;
-
-        System.out.println("Printing all 20 numbers, except if i == 3, increment by 2, then continue");
-        while ( i <= 20 )
-        {
-            if (i == 3)
-            {
-                i += 2;
-                continue;
-            }
-            
-            System.out.println(i);
-            i++;            
-        }
-
-        //  reset i to 1
-        i = 1;
-
-        System.out.println("Add skipping even numbers to the above: if i % 2 == 0, then simply i++");
-        while ( i <= 20 )
-        {
-            if (i == 3)
-            {
-                i += 2;
-                continue;
-            }
-            
-            System.out.println(i);
-            i++;
-            
-            if((i%2) == 0)
-            {
-                i++;
-            }
-        }
-        
-        //  reset i to 1
-        i = 1;
-
-        System.out.println("Enable early termination where i > 10");
-        while ( i <= 20 )
-        {
-            if (i == 3)
-            {
-                i += 2;
-                continue;
-            }
-            
-            System.out.println(i);
-            i++;
-            
-            if((i%2) == 0)
-            {
-                i++;
-            }
-
-            if (i > 10)
-            {
-                break;
-            }
-        }
-
         double myPi = 4.0;
         double j = 3.0;
         //  4 - 4/3 + 4/5 - 4/7 + 4/9
@@ -243,23 +171,7 @@ public class JavaLessonFour
             System.out.println(h);
             System.out.print("Continue: y or n ? ");
             contYorN = userInput.nextLine(); 
-            h += 1;
-        }
-
-        int k = 10;
-
-        //  do-while loop
-        do
-        {
-            System.out.println("k = " + k);
-            k += 1;
-        }
-        while (k < 10);
-
-        //  for (declare iterator; conditional statement; change iterator)
-        for (int l = 10; l >= 1; l--)
-        {
-            System.out.println(l);
+            h *= 2;
         }
 
         //  array size
@@ -283,9 +195,11 @@ public class JavaLessonFour
 
         //  search for item
         int searchKey = 55;
-        if (arr.find(searchKey) != arr.size())
+        int index = arr.find(searchKey);
+        
+        if (index != arr.size())
         {
-            System.out.println("Found " + searchKey);
+            System.out.println("Found " + searchKey + " at index " + index);
         }
         else
         {
@@ -294,7 +208,6 @@ public class JavaLessonFour
 
         //  display items
         arr.display();
-
 
         //  delete 3 items
         arr.delete(00);

@@ -139,8 +139,7 @@ class HighArray
     }
 }   //  end class HighArray
 
-//  this is the user of the tool
-//  demonstrates how communication between classes and the divison of responsibility between clases are important OOP aspects 
+//  communication between classes; divison of responsibility between clases 
 public class JavaLessonThree 
 {
     public static void main(String[] args)
@@ -154,6 +153,7 @@ public class JavaLessonThree
         arr = new LowArray(100);
         //  number of items in array
         int nElems = 0;
+
         //  loop variable
         int j;
 
@@ -198,7 +198,7 @@ public class JavaLessonThree
         //  yes
         else
         {
-            System.out.println("Found " + searchKey);
+            System.out.println("Found " + searchKey + " at index " + j);
         }
 
         // System.out.println("LowArray.delete()");
@@ -253,10 +253,10 @@ public class JavaLessonThree
         arr1.display();
 
         //  search for item
-        searchKey = 35;
+        searchKey = 33;
         if (arr1.find(searchKey))
         {
-            System.out.println("Found " + searchKey);
+            System.out.println("Found " + searchKey + " at index " + j);
         }
         else
         {
