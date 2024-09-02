@@ -134,23 +134,6 @@ public class JavaLessonFive
     static double myPI = 3.14159;
     static int randomNumber;
     static Scanner userInput = new Scanner(System.in);
-
-    //  this can come before or after the main function
-    public static int addThem(int a, int b)
-    {
-        //  local variable, only accessible here
-        double smallPI = 3.140;
-
-        System.out.println("Global PI: " + myPI);
-
-        //  local variable overwriting the global within the function scope
-        //  therefore, you can use class variables anywhere, but you can also "change" their values
-        //  in different scopes
-        double myPI = 3.0; 
-
-        System.out.println("Global [actually local] PI: " + myPI);
-        return a + b;
-    }
  
     public static void tryToChange(int d)
     {
@@ -197,8 +180,6 @@ public class JavaLessonFive
         //  accessModifier [static 
         //  = used whenever you want to access a method that is NOT part of a class definition]
         //  returnType methodName([parameters/arguments])
-        System.out.println(addThem(7, 11));        
-
         int d = 5;
         tryToChange(d);
 
@@ -214,7 +195,10 @@ public class JavaLessonFive
         {
             System.out.println("Guess a number between 0 and 50 : ");
             randomGuess = userInput.nextInt();
+            
+            //  decide whether to continue loop
             guessResult = checkGuess(randomGuess);
+            //  only informs
             compareGuess(randomGuess);
         }
         System.out.println("Yes, the random number is " + randomGuess);
