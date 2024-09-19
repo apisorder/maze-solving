@@ -141,3 +141,24 @@ for char in encrypted_message:
         decrypted_message += char
         
 print("Message deciphered as : ", decrypted_message)
+
+#   Printing strings inside other strigns is a common operation in programming.
+#   However, this requires a lot of tedious typing.  A simplier approach is to use
+#   string interpolation, in which the %s operator inside the string acts a marker
+#   to be replaced by values following the string.
+#   One benefit of stirng interpolation is that str() doesn't have to be called to
+#   convert values to strings.
+
+name = "JC"
+age = 19
+print('My name is %s.  I am %s years old.' % (name, age))
+
+#   Python 3.6 introduced f-strings, which is similar to string interpolation, except
+#   the bradces are used instead of %s, with the expressions placed directly inside
+#   the braces.
+#   Like raw strings, f-strings have an f prefix before the startign quotation mark.
+
+print(f'My name is {name}.  Next year I will be {age +1}.')
+
+
+
