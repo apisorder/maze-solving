@@ -1,6 +1,6 @@
 
 // Programmer:     Cheng, Jeff
-// Last Modified:  06-16-2024 09:04PM
+// Last Modified:  09-19-2024 09:32PM
 // Problem:        Java Tutorial 6
 
 //  there are mainly two kinds of exceptions
@@ -120,6 +120,7 @@ class ArrayBub
         }
     }
 
+    //  maximum sort
     public void bubbleSort()
     {
         int out, in;
@@ -182,6 +183,8 @@ class ArraySel
         }
         System.out.println("");
     }
+
+    //  minimum sort
     public void selectionSort()
     {
         int in, out, min;
@@ -302,6 +305,7 @@ public class JavaLessonSix
         // display items
         arr.display();
 
+        System.out.println("Bubble sort....");
         //  bubble sort them
         arr.bubbleSort();
 
@@ -333,6 +337,7 @@ public class JavaLessonSix
         arr2.display();
 
         //  selection-sort them
+        System.out.println("Selection sort....");
         arr2.selectionSort();
 
         //  display them again

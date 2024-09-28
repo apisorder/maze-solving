@@ -6,8 +6,21 @@
 //  video game
 //  public classes can be used by other classes
 //  a file can't contain more than one public classes
-public class Monster
+
+import java.util.Arrays;
+
+public class MonsterTwo
 {
+    static char[][] battleBoard = new char[10][10];
+
+    public static void buildBattleBoard()
+    {
+        for (char[] row : battleBoard)
+        {
+
+        }
+    }
+
     public final String TOMBSTONE = "Here lies a Dead Monster.";
     
     //  use as many private fields as possible
@@ -47,13 +60,13 @@ public class Monster
             alive = false;
         }
     }
-    public Monster(int newHealth)
+    public MonsterTwo(int newHealth)
     {
         health = newHealth;
     }
 
     //  a construtor cannot have a return value of any type
-    public Monster(int newHealth, int attack, int newMovement)
+    public MonsterTwo(int newHealth, int attack, int newMovement)
     {
         this(newHealth);
         this.attack = attack;
@@ -65,7 +78,7 @@ public class Monster
     //  have been defined
     //  overloading the constructor
     //  existing but does nothing
-    public Monster()
+    public MonsterTwo()
     {
 
     }

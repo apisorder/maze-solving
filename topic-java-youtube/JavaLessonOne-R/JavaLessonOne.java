@@ -1,6 +1,6 @@
 
 //  Programmer:     Cheng, Jeff
-//  Last Modified:  05-31-2024 08:50AM
+//  Last Modified:  09-18-2024 08:54PM
 //  Problem:        Java Tutorial 1
 
 import java.io.BufferedReader;
@@ -50,7 +50,11 @@ public class JavaLessonOne
     public static String getString() throws IOException
     {
         //  reads input stream, which in turn is read by buffer reader
-        String s = new BufferedReader(new InputStreamReader(System.in)).readLine();
+        //  InputStreamReader isr = new InputStreamReader(System.in);
+        //  BufferReader bf = new BufferReader(isr);
+        //  String s = bf.readLine(); 
+        String s = 
+            new BufferedReader(new InputStreamReader(System.in)).readLine();
         return s;
     }
 
@@ -58,23 +62,26 @@ public class JavaLessonOne
     public static char getChar() throws IOException
     {
         String s = getString();
-        //  prevents extraneous characters being left in the input buffer, because
-        //  such characters can cause problems with subsequent input
+        //  prevents extraneous characters being left in the input buffer, 
+        //  because such characters can cause problems with subsequent input
         return s.charAt(0);
     }
     
-    //  get string from user; return a number if the string only contains an integer
+    //  get string from user; return a number if the string only contains 
+    //  an integer
     public static int getInt() throws IOException
     {
         String s = getString();
         return Integer.parseInt(s);
     }
 
-    //  get string from user; return a double if the string only contains a number
+    //  get string from user; return a double if the string only contains 
+    //  a number
     public static double getDouble() throws IOException
     {
         String s = getString();
-        //  converting String object to a Double object using the wrappper class Double
+        //  converting String object to a Double object using 
+        //  the wrappper class Double
         Double wrapper = Double.valueOf(s);
         return wrapper.doubleValue();
     }
@@ -102,13 +109,18 @@ public class JavaLessonOne
         System.out.println("byte bigByte = " + bigByte);
         System.out.println("short bigShort = " + bigShort);
         System.out.println("int bigInt = " + bigInt);
-        System.out.println("long bigLong (terminating L required) = " + bigLong);
+        System.out.println("long bigLong (terminating L required) = " 
+            + bigLong);
         System.out.println("float bigFloat = " + bigFloat);
-        System.out.println("double bigDouble (terminating D optinal) = " + bigDouble);
+        System.out.println("double bigDouble (terminating D optinal) = " 
+            + bigDouble);
 
-        System.out.println("Maximum value of integer => Integer.MAX_VALUE = " + Integer.MAX_VALUE);
-        System.out.println("Maximum value of float => Float.MAX_VALUE = " + Float.MAX_VALUE);
-        System.out.println("Maximum value of double => Double.MAX_VALUE = " + Double.MAX_VALUE);
+        System.out.println("Maximum value of integer => Integer.MAX_VALUE = " 
+            + Integer.MAX_VALUE);
+        System.out.println("Maximum value of float => Float.MAX_VALUE = " 
+            + Float.MAX_VALUE);
+        System.out.println("Maximum value of double => Double.MAX_VALUE = " 
+            + Double.MAX_VALUE);
 
         boolean trueOrFalse = true;
 
@@ -126,22 +138,29 @@ public class JavaLessonOne
         String doubleString = Double.toString(bigDouble);
         String booleanString = Boolean.toString(trueOrFalse);
 
-        System.out.println("String byteString = Byte.toString(bigByte) = " + byteString);
-        System.out.println("String shortString = Short.toString(bigShort) = " + shortString);
-        System.out.println("String longString = Long.toString(bigLong) = " + longString);
-        System.out.println("String floatString = Float.toString(bigFloat) = " + floatString);
-        System.out.println("String doubleString = Double.toString(bigDouble) = " + doubleString);
-        System.out.println("String booleanString = Boolean.toString(trueOrFalse) = " + booleanString);
+        System.out.println("String byteString = Byte.toString(bigByte) = " 
+            + byteString);
+        System.out.println("String shortString = Short.toString(bigShort) = " 
+            + shortString);
+        System.out.println("String longString = Long.toString(bigLong) = " 
+            + longString);
+        System.out.println("String floatString = Float.toString(bigFloat) = " 
+            + floatString);
+        System.out.println("String doubleString = Double.toString(bigDouble) = " 
+            + doubleString);
+        System.out.println("String booleanString = " 
+            + "Boolean.toString(trueOrFalse) = " + booleanString);
 
         double aDoubleValue = 3000000000000.14546466464;
         int doubleToInt = (int) aDoubleValue;
 
-        System.out.println("int doubleToInt = (int) aDoubleValue = " + doubleToInt);
+        System.out.println("int doubleToInt = (int) aDoubleValue = " 
+            + doubleToInt);
         
         int stringToInt = Integer.parseInt(intString);
         System.out.println(
-            "int stringToInt = Integer.parseInt(String intString = Integer.toString(bigInt)) = " 
-        + stringToInt);
+            "int stringToInt = Integer.parseInt(String intString = " 
+                + "Integer.toString(bigInt)) = " + stringToInt);
 
         BankAccount ba1 = new BankAccount(100.00);
         System.out.print("Before transactions, ");
@@ -158,11 +177,13 @@ public class JavaLessonOne
         BankAccount ba2 = ba1;
         if (ba1 == ba2)
         {
-            System.out.println("Java references: they are identical (the same thing)!");
+            System.out.println("Java references: they are identical " 
+                + "(the same thing)!");
         }
         if (ba2.equals(ba1))
         {
-            System.out.println("They are equal: meaning they contain the same data (not necessarily the same thing)!");
+            System.out.println("They are equal: meaning they contain " 
+                + "the same data (not necessarily the same thing)!");
         }
 
         String userInputString = "";
@@ -173,27 +194,36 @@ public class JavaLessonOne
         {
             System.out.println("Please enter any string : ");
             userInputString = getString();
-            System.out.println("The string you entered : " + userInputString);
+            System.out.println("The string you entered : " 
+                + userInputString);
 
-            System.out.println("Now please another string from which the first character will be retrieved: ");
+            System.out.println("Now please another string from which " 
+                + "the first character will be retrieved: ");
             userInputChar = getChar();
-            System.out.println("The character you entered : " + userInputChar);
+            System.out.println("The character you entered : " 
+                + userInputChar);
 
-            System.out.println("Now, please enter another string containing an integer (numbers only) : ");
+            System.out.println("Now, please enter another string containing " 
+                + "an integer (numbers only) : ");
             userInputInt = getInt();
-            System.out.println("The integer you entered : " + userInputInt);
+            System.out.println("The integer you entered : " 
+                + userInputInt);
 
-            System.out.println("Finally, please enter a string containing a floating number (numbers only, except the decimal point) : ");
+            System.out.println("Finally, please enter a string containing " 
+                + "a floating number (numbers only, except the decimal) : ");
             userInputDouble = getDouble();
-            System.out.println("The floating number you entered : " + userInputDouble);
+            System.out.println("The floating number you entered : " 
+                + userInputDouble);
         }
         catch (IOException e)
         {
-            System.out.println("An IO exception has taken place.  Program will now exit.");
+            System.out.println("An IO exception has taken place.  " 
+                + "Program will now exit.");
         }        
         catch (Exception e)
         {
-            System.out.println("An unexpected exception has taken place.  Program will now exit.");
+            System.out.println("An unexpected exception has taken place.  " 
+                + "Program will now exit.");
         }
     }   //  end main()
 }   //  end class BankApp

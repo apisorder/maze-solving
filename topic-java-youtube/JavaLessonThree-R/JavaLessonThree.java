@@ -1,6 +1,6 @@
 
 // Programmer:     Cheng, Jeff
-// Last Modified:  06-13-2024 09:25PM
+// Last Modified:  09-18-2024 09:04PM
 // Problem:        Java Tutorial 3
 
 //  demonstrates array class with low-level interface
@@ -30,7 +30,7 @@ class LowArray
     }
 }   //  end class lowArray
 
-//  demonstrates array class wsith high-level interface
+//  demonstrates array class with a high-level interface
 class HighArray
 {
     //  reference to array a
@@ -46,8 +46,9 @@ class HighArray
         nElems = 0;
     }
 
-    //  looks through the array for the item whose key value was passed to it as an argument
-    //  returns true or false, depending on whether it finds the item
+    //  looks through the array for the item whose key value 
+    //  was passed to it as an argument
+    //  returns true or false, depending on whether the item was found
     public boolean find(long searchKey)
     {
         int j;
@@ -75,9 +76,10 @@ class HighArray
         }
     }   //  end find()
 
-    //  places a new data item in the next available space in the array
-    //  a field named nElems keeps track of the number of array cells that are actually filled
-    //  with data items
+    //  places a new data item in the next available space 
+    //  in the array
+    //  a field named nElems keeps track of the number of
+    //  array cells that are actually filled with data items
     public void insert(long value)
     {
         //  insert it
@@ -86,8 +88,10 @@ class HighArray
         nElems += 1;
     }
 
-    //  searches for the element whose key value was passed to it as an argument and, when it finds the element,
-    //  shifts all the elements in the higher index cells down one cell, thus writing over the deleted value
+    //  searches for the element whose key value was passed to it 
+    //  as an argument and, when it finds the element, 
+    //  shifts all elements in the higher index cells down one cell, 
+    //  thus writing over the deleted value
     //  it then decrements nElems
     public boolean delete(long value)
     {
@@ -116,7 +120,6 @@ class HighArray
                 // System.out.println("k = " + k);
                 // System.out.println("arr[k] = " + a[k]);
                 // System.out.println("arr[k+1] = " + a[k+1]);
-    
                 a[k] = a[k+1];
             }
             //  decrement size
@@ -139,13 +142,15 @@ class HighArray
     }
 }   //  end class HighArray
 
-//  communication between classes; divison of responsibility between clases 
+//  communication between classes 
+//  divison of responsibility between clases 
 public class JavaLessonThree 
 {
     public static void main(String[] args)
     {
         int defaultValue = (int) (Math.random() * 50);
-        System.out.println("Default value * (int) (Math.random()* someNumber) = : " + defaultValue);
+        System.out.println("Default value * (int) " 
+            + "(Math.random()* someNumber) = : " + defaultValue);
 
         //  reference
         LowArray arr;
@@ -202,7 +207,6 @@ public class JavaLessonThree
         }
 
         // System.out.println("LowArray.delete()");
-
         for (j = 0; j < nElems; j++)
         {
             if (arr.getElem(j) == 55)
@@ -217,7 +221,6 @@ public class JavaLessonThree
             // System.out.println("k = " + k);
             // System.out.println("arr.getElem(k) = " + arr.getElem(k));
             // System.out.println("arr.getElem(k+1) = " + arr.getElem(k+1));
-
             arr.setElem(k, arr.getElem(k+1));
         }
         //  decrement size

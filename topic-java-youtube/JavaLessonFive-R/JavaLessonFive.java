@@ -1,6 +1,6 @@
 
 // Programmer:     Cheng, Jeff
-// Last Modified:  06-15-2024 08:08PM
+// Last Modified:  09-19-2024 09:25PM
 // Problem:        Java Tutorial 5
 
 import java.util.Scanner;
@@ -133,6 +133,7 @@ public class JavaLessonFive
     //  class variable 
     static double myPI = 3.14159;
     static int randomNumber;
+    //  bf(isr(System.in))
     static Scanner userInput = new Scanner(System.in);
  
     public static void tryToChange(int d)
@@ -149,6 +150,7 @@ public class JavaLessonFive
 
     public static int checkGuess(int guess)
     {
+        //  -1 terminates the checking
         if (guess == randomNumber)
         {
             return -1;
@@ -177,8 +179,9 @@ public class JavaLessonFive
 
     public static void main(String[] args)
     {
-        //  accessModifier [static 
-        //  = used whenever you want to access a method that is NOT part of a class definition]
+        //  accessModifier [static] 
+        //  = used whenever you want to access a method that is 
+        //  NOT part of a class definition
         //  returnType methodName([parameters/arguments])
         int d = 5;
         tryToChange(d);
@@ -196,7 +199,7 @@ public class JavaLessonFive
             System.out.println("Guess a number between 0 and 50 : ");
             randomGuess = userInput.nextInt();
             
-            //  decide whether to continue loop
+            //  whether to continue the loop
             guessResult = checkGuess(randomGuess);
             //  only informs
             compareGuess(randomGuess);

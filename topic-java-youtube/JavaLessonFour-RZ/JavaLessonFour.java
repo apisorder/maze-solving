@@ -1,6 +1,6 @@
 
 // Programmer:     Cheng, Jeff
-// Last Modified:  06-14-2024 08:46PM
+// Last Modified:  09-19-2024 06:25PM
 // Problem:        Java Tutorial 4 
 
 import java.util.Scanner;
@@ -26,7 +26,8 @@ class  OrdArray
         return nElems;
     }
 
-    //  the major advantage is that search times are much faster than in an unordered array
+    //  the major advantage is that search times are much faster 
+    //  than in an unordered array
     public int find(long searchKey)
     {
         int lowerBound = 0;
@@ -64,7 +65,8 @@ class  OrdArray
     }   //  end find()
 
     //  put element into array
-    //  disadvantage:   insertion takes longer because all the data items with a higher key value must be moved up to make room.
+    //  disadvantage:   insertion takes longer because all the data 
+    //  items with a higher key value must be moved up to make room.
     public void insert(long value)
     {
         int j;
@@ -77,7 +79,7 @@ class  OrdArray
                 break;
             }
         }
-        //  shif elements up
+        //  shift elements up
         for (int k = nElems; k > j; k--)
         {
             a[k] = a[k-1];
@@ -136,10 +138,10 @@ public class JavaLessonFour
         while (j < 11)
         {
             myPi = myPi - (4/j) + 4/(j+2);
-            //  note it's incremented by 4
+            //  j = j + 4
             j += 4;
         }
-        System.out.println("My PI where j < 11= " + myPi);
+        System.out.println("My PI where j < 11 = " + myPi);
 
         //  resetting myPi and j
         myPi = 4.0;
@@ -161,15 +163,16 @@ public class JavaLessonFour
             //  note it's incremented by 4
             j += 4;
         }
-        System.out.println("My PI where j < 1000001= " + myPi);
+        System.out.println("My PI where j < 1000001 = " + myPi);
 
         String contYorN = "Y";
         int h = 1;
 
+        System.out.println("This program doubles the previous.");
         while (contYorN.equalsIgnoreCase("y"))
         {
             System.out.println(h);
-            System.out.print("Continue: y or n ? ");
+            System.out.print("Continue doubling: y or n ? ");
             contYorN = userInput.nextLine(); 
             h *= 2;
         }

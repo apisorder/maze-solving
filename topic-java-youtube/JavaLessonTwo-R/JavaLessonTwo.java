@@ -1,6 +1,6 @@
 
 // Programmer:     Cheng, Jeff
-// Last Modified:  05-31-2024 08:47AM
+// Last Modified:  09-18-2024 09:01PM
 // Problem:        Java Tutorial 2
 
 import java.util.Scanner;
@@ -17,16 +17,20 @@ public class JavaLessonTwo
         {
             //  string == nextLine()
             int numberEntered = userInput.nextInt();
-            System.out.println("The integer you entered = " + numberEntered);
+            System.out.println("The integer you entered = " 
+                + numberEntered);
             
             int numberEntered2 = numberEntered *2;
-            System.out.println(numberEntered + " + " + numberEntered + " = " + Math.abs(numberEntered2));
-            System.out.println("number entered vs number entered*2 (which is bigger) : " + Math.max(numberEntered2, numberEntered));
+            System.out.println(numberEntered + " + " 
+                + numberEntered + " = " + Math.abs(numberEntered2));
+            System.out.println("number entered vs number entered*2 " 
+                + "(which is bigger) : " 
+                + Math.max(numberEntered2, numberEntered));
         }
         else
         {
             System.out.println("Please enter an integer next time!");
-            //  Math.ceil returns a float automatically
+            //  Math.ceil() returns a float automatically
 
             double numberEntered = 12.13;
 
@@ -36,21 +40,29 @@ public class JavaLessonTwo
             }
         
             int numCeil = (int) Math.ceil(numberEntered);
-            System.out.println("The floating point number you entered (rouned to an integer) = " + numCeil);
+            System.out.println("The floating point number you entered " 
+                + "(rounded to an integer) = " + numCeil);
         }
 
-        System.out.println("Enter a number for the upperbound to generate a random number : ");
+        System.out.println("Enter a number for the upperbound to generate " 
+            + "a random number : ");
+
         if (userInput.hasNextInt())
         {
-            System.out.println("Some random number based on the number you entered as upperbound : " + Math.random()*(userInput.nextInt()+1));
+            System.out.println("Some random number based on the number " 
+                + "you entered as upperbound : " 
+                + (int)Math.floor(Math.random()*(userInput.nextInt()+1)));
         }
         else
         {
-            System.out.println("Invalid input detected.  The upperbound will now default to 10 : " + Math.random()*11);
+            System.out.println("Invalid input detected.  The upperbound " 
+                + "will now default to 10 : " 
+                + (int)Math.floor(Math.random()*11));
         }
 
          // reference to array
-         // alternative syntax: long arr[], but placing the [] after the long makes it clear that the [] is part of the type. 
+         // alternative syntax: long arr[], but placing the [] after 
+         // the long makes it clear that the [] is part of the type. 
          long[] arr = new long[100];
          // number of items
          int nElems = 0;
