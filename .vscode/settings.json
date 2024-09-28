@@ -1,0 +1,7 @@
+{
+    "java.dependency.packagePresentation": "hierarchical",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "topic-java-youtube/JavaLessonEight/lib/commons-lang3-3.17.0.jar"
+    ]
+}
