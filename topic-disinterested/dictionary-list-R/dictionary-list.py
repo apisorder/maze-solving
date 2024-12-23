@@ -154,3 +154,12 @@ print(' - Cups                ' + str(totalBrought(allGuests, 'cups')))
 print(' - Cakes               ' + str(totalBrought(allGuests, 'cakes')))
 print(' - Ham Sandwiches      ' + str(totalBrought(allGuests, 'ham sandwiches')))
 print(' - Apples Pies         ' + str(totalBrought(allGuests, 'apple pies')))
+
+def printPicnic(itemsDict, leftWdith, rigthWidth):
+    print('Picnic Items'.center(leftWdith+rigthWidth, '-'))
+    for k, v in itemsDict.items():
+        print(k.ljust(leftWdith, ','+str(v).rjust(rigthWidth)))
+
+picnicItems = {'sandwiches':4, 'apples':2, 'cups':4, 'cookies':8}
+printPicnic(picnicItems, 12, 5)
+printPicnic(picnicItems, 20, 6)

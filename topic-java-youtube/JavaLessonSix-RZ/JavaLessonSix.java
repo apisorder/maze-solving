@@ -126,7 +126,8 @@ class ArrayBub
         int out, in;
 
         //  outer loop (backward)
-        for (out = nElemes-1; out > 1; out--)
+        //  display --> o --> nElemens-1 i.e. o --> < nElemens
+        for (out = nElemes-1; out > 0; out--)
         {
             //  inner loop (forward)
             for (in = 0; in < out; in++)
@@ -189,12 +190,14 @@ class ArraySel
     {
         int in, out, min;
 
+        //  display --> o --> nElemens-1 i.e. o --> < nElemens
         //  outer loop
-        for (out = 0; out < nElemes-1; out++)
+        for (out = 0; out < nElemes; out++)
         {
             //  minimum
             min = out;
             //  inner loop
+            //  display --> o --> nElemens-1 i.e. o --> < nElemens
             for (in = out+1; in < nElemes; in++)
             {
                 //  if min greater
@@ -216,6 +219,66 @@ class ArraySel
         a[two] = temp;
     }
 }   //  end class ArraySel
+
+//  demonstrates insertion sort
+class ArrayIns
+{
+    //  ref to array a
+    private long[] a;
+    //  number of data items
+    private int nElemes;
+
+    //  constructor
+    public ArrayIns(int max)
+    {
+        //  create the array
+        a = new long[max];
+        //  no items yet
+        nElemes = 0;
+    }
+    //  put element into array
+    public void insert(long value)
+    {
+        //  insert it
+        a[nElemes] = value;
+        //  increment size
+        nElemes += 1;
+    }
+    //  display array conetns
+    public void display()
+    {
+        //  for each element
+        for (int j = 0; j < nElemes; j++)
+        {
+            //  display it
+            System.out.print(a[j] + " ");
+        }
+        System.out.println("");
+    }
+
+    //  minimum sort
+    public void insertionSort()
+    {
+        int in, out;
+
+        //  display --> o --> nElemens-1 i.e. o --> < nElemens
+        //  outer loop
+        for (out = 1; out < nElemes; out++)
+        {
+            long temp = a[out];
+            
+            in = out;
+            //  inner loop
+            //  display --> o --> nElemens-1 i.e. o --> < nElemens
+            while (in > 0 && a[in-1] >= temp)
+            {
+                a[in] = a[in-1];
+                --in;
+            }   //  end while (in)
+            a[in] = temp;
+        }   //  end for(out)
+    }   //  end selectionSort()
+}   //  end class ArrayIns
 
 public class JavaLessonSix
 {
@@ -290,18 +353,11 @@ public class JavaLessonSix
         //  create the array
         arr = new ArrayBub(maxSize);
 
-        //  insert 10 items
-        arr.insert(77);
+        //  insert 3 items
         arr.insert(99);
-        arr.insert(44);
-        arr.insert(55);
-        arr.insert(22);
         arr.insert(88);
-        arr.insert(11);
         arr.insert(00);
-        arr.insert(66);
-        arr.insert(33);
-
+        
         // display items
         arr.display();
 
@@ -321,18 +377,11 @@ public class JavaLessonSix
         //  reference to array
         arr2 = new ArraySel(maxSize);
 
-        //  insert 10 items
-        arr2.insert(77);
+        //  insert 3 items
         arr2.insert(99);
-        arr2.insert(44);
-        arr2.insert(55);
-        arr2.insert(22);
         arr2.insert(88);
-        arr2.insert(11);
         arr2.insert(00);
-        arr2.insert(66);
-        arr2.insert(33);
-
+        
         //  display items
         arr2.display();
 
@@ -342,5 +391,25 @@ public class JavaLessonSix
 
         //  display them again
         arr2.display();
+
+        //  reference to array
+        ArrayIns arr3;
+        //  reference to array
+        arr3 = new ArrayIns(maxSize);
+    
+        //  insert 3 items
+        arr3.insert(99);
+        arr3.insert(88);
+        arr3.insert(00);
+            
+        //  display items
+        arr3.display();
+    
+        //  selection-sort them
+        System.out.println("Insertion sort....");
+        arr3.insertionSort();
+    
+        //  display them again
+        arr3.display();   
     }   //  end main()
 }
