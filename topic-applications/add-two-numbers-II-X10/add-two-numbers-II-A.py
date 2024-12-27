@@ -1,7 +1,7 @@
 
 #   Programmer:     Cheng, Jeff
 #   Last Modified:  12-25-2024 04:33PM
-#   Problem:        445. Add Two Numbers II 
+#   Problem:        445. Add Two Numbers II (reverse method)
 
 #   You are given two non-empty linked lists representing two non-negative 
 #   integers.
