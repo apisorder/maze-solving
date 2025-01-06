@@ -1,6 +1,6 @@
 
 #   Programmer:     Cheng, Jeff
-#   Last Modified:  12-26-2024 08:14PM
+#   Last Modified:  01-05-2025 09:44PM
 #   Problem:        445. Add Two Numbers II (list length method)
 
 #   You are given two non-empty linked lists representing two non-negative 
@@ -13,28 +13,30 @@
 #
 #   You may assume the two numbers do not contain any leading zero, except 
 #   the number 0 itself.
-
+#
 #   Example 1:
 #
 #   Input: l1 = [7,2,4,3], l2 = [5,6,4]
 #   Output: [7,8,0,7]
-
+#
 #   Example 2:
 #
 #   Input: l1 = [2,4,3], l2 = [5,6,4]
 #   Output: [8,0,7]
-
+#
 #   Example 3:
 #
 #   Input: l1 = [0], l2 = [0]
 #   Output: [0]
 
-# Definition for singly-linked list.
+#   Definition for list node
 class ListNode:
     #   parameters: this, value, next pointer
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
+
+#   Now incorporate list node in a singly-linked linked list
 class Solution:
     #   parameters: this, list 1, list 2
     def addTwoNumbers(self, l1, l2):
@@ -52,24 +54,31 @@ class Solution:
         #   calculate list lengths
         list1_length = listLength(l1)
         list2_length = listLength(l2)
-        
+
         dummyHead = ListNode()
 
-
-#################################################
+        #################################################
         count1 = 0
-#################################################
+        #################################################
 
 
-        #   add nodes from list 1 and list 2 and ignore carries
+        #   cycle one, building the list in reverse so we effectively reverse the list
+        #   for easier processing
+        #
+        #   135 + 456 = 591
+        #
+        #   l1: 1 -> 3 -> 5
+        #   l2: 4 -> 5 -> 6
+        #   
+        #   cycle one:
+        #   l3: 11 -> 8 -> 5
 
-        #   if both lists has at least one node remaining
+        #   if both lists has at least one node remaining, since both lists are non-empty
         while list1_length > 0 and list2_length > 0:
 
-
-#################################################
+            #################################################
             count1 += 1
-#################################################
+            #################################################
 
 
             #   initialize node value
@@ -83,30 +92,27 @@ class Solution:
                 l2 = l2.next
                 list2_length -= 1
 
-
-#################################################
+            #################################################
             print("count1 = ", count1)
-#################################################
-
+            #################################################
 
             #   create the list in reverse
-            #   i.e. current.previous = head
             head = ListNode(val, dummyHead)
             dummyHead = head
 
-        #   create new list
-
-        #   again create list in reverse
-
-        #   this time, handles necessary carries
+        #   cycle two:
+        #   now that the list is reversed, we can handle any carries much easier, and
+        #   we again build the list in reverse as to restore the original list order
+        #
+        #   l3: 11 -> 8 -> 5
+        #
+        #   l3: 5 -> 9 -> 1
         current = dummyHead
         dummyHead = None
 
-
-#################################################
+        #################################################
         count2= 1
-#################################################
-
+        #################################################
 
         carry = 0
         #   as long as nodes exist in the previous list
@@ -121,26 +127,21 @@ class Solution:
             head = ListNode(val, dummyHead)
             dummyHead = head
 
-
-#################################################
+            #################################################
             print("count2 = ", count2)
             count2 += 1
-#################################################
-
+            #################################################
 
             #   advance the list
             current = current.next
 
-
-        print("dummyHead.val = ", dummyHead.val)
-        print("dummyHead.next = ", dummyHead.next) 
-
-
+        #   in case no carry is made, return the next significant digit
+        #   i.e. 4 + 3 = 07 but 5 + 5 = 10
         if dummyHead.val == 0:
             return dummyHead.next
         else:
             return dummyHead
-
+        
 l1 = ListNode(1)
 l2 = ListNode(4)
 #   l1 = [1]

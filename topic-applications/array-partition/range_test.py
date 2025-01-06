@@ -1,8 +1,9 @@
 
 #   Programmer:     Cheng, Jeff
-#   Last Modified:  12-31-2024 11:21AM
+#   Last Modified:  01-05-2025 09:56PM
 #   Problem:        The Range Function
 #   References:     https://www.geeksforgeeks.org/python-range-function/
+
 number_to_start = 5
 number_to_end_but_excluded = 20
 step_aka_stride = 7
@@ -45,8 +46,8 @@ fruits = ["apple", "banana", "cherry", "date"]
 for i in range(len(fruits)):
     print(fruits[i])
 
-#   The step value must not be zero. If a step is zero, Python raises 
-#   a ValueError exception.
+#   The step value must not be zero. If a step is zero, Python raises a 
+#   ValueError exception.
 
 #   How to generate a list using range():
 
