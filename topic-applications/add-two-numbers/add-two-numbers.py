@@ -2,6 +2,8 @@
 #   Programmer:     Cheng, Jeff
 #   Last Modified:  01-05-2025 09:47PM
 #   Problem:        2. Add Two Numbers
+#   Complexity:     time -> O(n)
+#                   space -> O(1)
 #
 #   You are given two non-empty linked lists representing two non-negative integers.
 #    

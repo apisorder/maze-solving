@@ -2,6 +2,8 @@
 #   Programmer:     Cheng, Jeff
 #   Last Modified:  01-05-2025 09:55PM
 #   Problem:        70. Climbing Stairs
+#   Complexity:     time -> O(n)
+#                   space -> O(n)
 #
 #   You are climbing a staircase. It takes n steps to reach the top.
 #

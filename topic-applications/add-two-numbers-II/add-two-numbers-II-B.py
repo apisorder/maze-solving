@@ -1,8 +1,10 @@
 
 #   Programmer:     Cheng, Jeff
-#   Last Modified:  01-05-2025 09:44PM
+#   Last Modified:  01-05-2025 09:26PM
 #   Problem:        445. Add Two Numbers II (list length method)
-
+#   Complexity:     time -> O(n)
+#                   space -> O(n)
+#
 #   You are given two non-empty linked lists representing two non-negative 
 #   integers. 
 #   
@@ -57,11 +59,6 @@ class Solution:
 
         dummyHead = ListNode()
 
-        #################################################
-        count1 = 0
-        #################################################
-
-
         #   cycle one, building the list in reverse so we effectively reverse the list
         #   for easier processing
         #
@@ -73,14 +70,9 @@ class Solution:
         #   cycle one:
         #   l3: 11 -> 8 -> 5
 
-        #   if both lists has at least one node remaining, since both lists are non-empty
+        #   if both lists has at least one node remaining, since both lists are 
+        #   non-empty
         while list1_length > 0 and list2_length > 0:
-
-            #################################################
-            count1 += 1
-            #################################################
-
-
             #   initialize node value
             val = 0
             if list1_length >= list2_length:
@@ -91,10 +83,6 @@ class Solution:
                 val += l2.val
                 l2 = l2.next
                 list2_length -= 1
-
-            #################################################
-            print("count1 = ", count1)
-            #################################################
 
             #   create the list in reverse
             head = ListNode(val, dummyHead)
@@ -110,10 +98,6 @@ class Solution:
         current = dummyHead
         dummyHead = None
 
-        #################################################
-        count2= 1
-        #################################################
-
         carry = 0
         #   as long as nodes exist in the previous list
         while current:
@@ -127,11 +111,6 @@ class Solution:
             head = ListNode(val, dummyHead)
             dummyHead = head
 
-            #################################################
-            print("count2 = ", count2)
-            count2 += 1
-            #################################################
-
             #   advance the list
             current = current.next
 
@@ -141,31 +120,3 @@ class Solution:
             return dummyHead.next
         else:
             return dummyHead
-        
-l1 = ListNode(1)
-l2 = ListNode(4)
-#   l1 = [1]
-#   l2 = [4]
-print("l1 = ", l1.val)
-print("l2 = ", l2.val)
-#   count1 = 1
-#   count2 = 2
-#   dummyHead.val = 0
-
-l3 = ListNode(5)
-l4 = ListNode(5)
-#   l3 = [5]
-#   l4 = [5]
-print("l3 = ", l3.val)
-print("l4 = ", l4.val)
-#   count1 = 1
-#   count2 = 2
-#   dummyHead = 1
-
-solution = Solution()
-answer = solution.addTwoNumbers(l1, l2)
-#   answer.val = 5
-print(answer.val)
-answer = solution.addTwoNumbers(l3, l4)
-#   answer.val = 1
-print(answer.val)

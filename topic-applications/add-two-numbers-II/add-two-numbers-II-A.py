@@ -2,6 +2,8 @@
 #   Programmer:     Cheng, Jeff
 #   Last Modified:  01-05-2025 09:49PM
 #   Problem:        445. Add Two Numbers II (reverse method)
+#   Complexity:     time -> O(n)
+#                   space -> O(n)
 #
 #   You are given two non-empty linked lists representing two non-negative integers.
 #    

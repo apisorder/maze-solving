@@ -1,35 +1,65 @@
 
 #   Programmer:     Cheng, Jeff
-#   Last Modified:  05-19-2024 03:48PM
-#   Problem:        561. Array Partition
-
-#   Given an integer array nums of 2n integers, group these integers into n pairs 
-#   (a1, b1), (a2, b2), ..., (an, bn) such that the sum of min(ai, bi) for all i is maximized. 
-
-#   Return the maximized sum.
-
+#   Last Modified:  01-06-2025 05:46PM
+#   Problem:        829. Consecutive Numbers Sum
+#   Reference:      https://leetcode.com/problems/consecutive-numbers-sum/solutions/129015/5-lines-c-solution-with-detailed-mathematical-explanation/
+#   Complexity:     time -> O(sqrt(n))
+#                   space -> O(1)
+#
+#   Given an integer n, return the number of ways you can write n as the sum 
+#   of consecutive positive integers.
+#
 #   Example 1:
-#   Input: nums = [1,4,3,2]
-#   Output: 4
-#   Explanation: All possible pairings (ignoring the ordering of elements) are:
-#   1. (1, 4), (2, 3) -> min(1, 4) + min(2, 3) = 1 + 2 = 3
-#   2. (1, 3), (2, 4) -> min(1, 3) + min(2, 4) = 1 + 2 = 3
-#   3. (1, 2), (3, 4) -> min(1, 2) + min(3, 4) = 1 + 3 = 4
-#   So the maximum possible sum is 4.
-
+#   
+#   Input: n = 5
+#   Output: 2
+#
+#   Explanation: 
+#   5 = 5
+#   5 = 2 + 3
+#
 #   Example 2:
-#   Input: nums = [6,2,6,5,1,2]
-#   Output: 9
-#   Explanation: The optimal pairing is (2, 1), (2, 5), (6, 6). min(2, 1) + min(2, 5) + min(6, 6) = 1 + 2 + 6 = 9.
-
-import math
+#
+#   Input: n = 9
+#   Output: 3
+#   
+#   Explanation: 
+#   9 = 4 + 5 
+#   9 = 2 + 3 + 4 
+#   9 = 9
+#
+#   Example 3:
+#
+#   Input: n = 15
+#   Output: 4
+#
+#   Explanation: 
+#   15 = 8 + 7 
+#   15 = 4 + 5 + 6 
+#   15 = 1 + 2 + 3 + 4 + 5
+#   15 = 15
+# 
+#   Constraints:
+#   1 <= n <= 109
 
 class Solution:
-    def consecutiveNumbersSum(self, n):
-        answer = 1
+    def consecutiveNumbersSum(self, n: int) -> int:
+        #   N = x + x+1 + x+2 + x+3 + ... + x+k-1
+        #   N = kx + k(k-1)/2
+        #   kx = N - k(k-1)/2
+        #   -> if N - k(k-1)/2 is a multiple of k
+        #   another x exists, i.e. another solution
+        #   since kx > 0, N - k(k-1)/2 > 0
+        #   N > k(k-1)/2
+        #   2N > k(k-1)
+        #   -> k < sqrt(2n)
 
+        import math 
+        num_of_solutions = 1
+
+        #   note how we must cast to int, and how we must add 1
         for k in range(2, int(math.sqrt(2*n))+1):
-            if (n-(k-1)*k//2)%k == 0:
-                answer += 1
+            if ((n - k*(k-1)//2) % k) == 0:
+                num_of_solutions += 1
 
-        return answer
+        return num_of_solutions
